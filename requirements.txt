@@ -6,3 +6,4 @@ requests
 wikipedia
 ipython
 click
+fire
