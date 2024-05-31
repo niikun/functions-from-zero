@@ -1,6 +1,4 @@
 #!/usr/bin/env python3
-
-import wikipedia
 import click
 from mylib.bot import scrape
 
