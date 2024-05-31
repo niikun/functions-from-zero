@@ -10,3 +10,4 @@ fire
 fastapi
 pydantic
 uvicorn[standard]
+urllib3<2.0
