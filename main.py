@@ -8,17 +8,15 @@ from pydantic import BaseModel
 app = FastAPI()
 
 class Wiki(BaseModel):
-    word:str
-
+    word: str
 
 @app.get("/")
 def read_root():
     return {"Hello": "World"}
 
-
 @app.get("/word/{word}")
 def scrape_word(word: str):
-    scraped = scrape(word)  # word is now an instance of Wiki
+    scraped = scrape(word)
     return {"word": word, "ans": scraped}
 
 @app.post("/wiki")
@@ -29,4 +27,4 @@ async def scrape_story(wiki: Wiki):
     return JSONResponse(content=json_compatible_item_data)
 
 if __name__ == "__main__":
-    uvicorn.run(app, host="127.0.0.0", port=8080)
+    uvicorn.run(app, host="0.0.0.0", port=8000)
