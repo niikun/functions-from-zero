@@ -2,15 +2,14 @@
 
 import wikipedia
 import click
+from mylib.bot import scrape
 
-def scrape(word="Microsoft", length=1):
-    result = wikipedia.summary(word, sentences=length)
-    return result
 
 @click.command()
 @click.option("--word", prompt="Enter the word to search", help="The word to search on Wikipedia", default="Microsoft")
-def main(word):
-    print(scrape(word))
+def cli(word="Microsoft",length=1):
+    result = scrape(word, length)
+    click.echo(result)
 
 if __name__ == "__main__":
-    main()  # pylint: disable=no-value-for-parameter
+    cli()  # pylint: disable=no-value-for-parameter
