@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+
 import wikipedia
 import click
 
@@ -6,7 +8,7 @@ def scrape(word="Microsoft", length=1):
     return result
 
 @click.command()
-@click.argument("word")
+@click.option("--word", prompt="Enter the word to search", help="The word to search on Wikipedia", default="Microsoft")
 def main(word):
     print(scrape(word))
 
