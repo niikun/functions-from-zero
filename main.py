@@ -27,4 +27,4 @@ async def scrape_story(wiki: Wiki):
     return JSONResponse(content=json_compatible_item_data)
 
 if __name__ == "__main__":
-    uvicorn.run(app, host="0.0.0.0", port=8000)
+    uvicorn.run(app, host="0.0.0.0", port=8080)
